@@ -1,0 +1,166 @@
+/* Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Arial', sans-serif;
+  background-color: #121212; /* Dark background */
+  color: #f4f4f4;
+  line-height: 1.6;
+  font-size: 16px;
+}
+
+header {
+  background-color: #1f1f1f; /* Darker header */
+  color: #f4f4f4;
+  text-align: center;
+  padding: 2rem;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.6);
+}
+
+header h1 {
+  font-family: 'Roboto', sans-serif;
+  font-size: 2.5rem;
+  margin-bottom: 1.5rem;
+  color: #ff9800; /* Bright accent color for the header */
+}
+
+
+/* Flexbox is used for elements that need to be aligned horizontally or vertically in a flexible manner.*/
+
+.search-container {
+  display: flex;   /*Makes the container a flexbox, enabling flexible layout control.*/
+  justify-content: center;
+  margin-bottom: 1.5rem; /*Adds spacing below the search container.*/
+}
+
+.search-container input {
+  width: 60%; /*Sets the input field's width to 60% of its container.*/
+  padding: 1rem; /*  making the text sit further from the edges*/
+  font-size: 1.1rem;
+  border: 2px solid #ff9800;
+  border-radius: 5px 0 0 5px;
+  outline: none; /* removes the default blue outline*/
+  background-color: #333;
+  color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-container input:focus {
+  transform: scale(1.05); /* Slightly increase size on focus */
+  border-color: #ff5722; /* Change border color on focus */
+}
+
+.search-container button {
+  padding: 1rem 1.5rem;
+  background-color: #ff9800;
+  color: white;
+  border: none;
+  border-radius: 0 5px 5px 0;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.search-container button:hover {
+  background-color: #e68900;
+  transform: translateY(-3px); /* Slight upward movement on hover */
+}
+
+header nav {
+  margin-top: 1rem;
+}
+
+header nav button {
+  background-color: #444;
+  color: #f4f4f4;
+  border: none;
+  padding: 0.8rem 1.5rem;
+  margin: 0.5rem;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1rem;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+}
+
+header nav button:hover {
+  background-color: #ff9800;
+  color: #fff;
+  transform: scale(1.05); /* Slight scale effect on hover */
+}
+
+#movies-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 movies per row */
+  gap: 2rem;
+  padding: 2rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.movie {
+  background-color: #1a1a1a; /* Dark background for the movie card */
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease, box-shadow 0.3s ease, filter 0.3s ease;
+}
+
+.movie:hover {
+  transform: translateY(-10px); /* Slight upward movement */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.6);
+  filter: brightness(1.2); /* Brighten the card on hover */
+}
+
+.movie img {
+  width: 100%;
+  height: auto;
+  border-bottom: 2px solid #444;
+  transition: transform 0.3s ease;
+}
+
+.movie img:hover {
+  transform: scale(1.05); /* Subtle zoom effect */
+}
+
+.movie h3 {
+  font-size: 1.1rem;
+  text-align: center;
+  padding: 1rem;
+  color: #fff;
+  font-weight: bold;
+}
+
+footer {
+  text-align: center;
+  background-color: #1f1f1f;
+  color: white;
+  padding: 1.5rem;
+  font-size: 1rem;
+  margin-top: 2rem;
+}
+
+/* Tablet Layout: 2 movies per row */
+@media (max-width: 768px) {
+  #movies-container {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Mobile Layout: 1 movie per row */
+@media (max-width: 480px) {
+  #movies-container {
+    grid-template-columns: 1fr;
+  }
+
+  .search-container input {
+    width: 70%;
+  }
+
+  .search-container button {
+    width: 30%;
+  }
+}

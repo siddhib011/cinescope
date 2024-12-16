@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CineScope</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CineScope</h1>
+    <div class="search-container">
+      <input
+        type="text"
+        id="search-input"
+        placeholder="Search for movies..."
+        onkeyup="searchMovies(event)"
+      />
+      <button onclick="searchMovies()">Search</button>
+    </div>
+    <nav>
+      <button onclick="showHomePage()">Home</button>
+      <button onclick="fetchMovies('action')">Action</button>
+      <button onclick="fetchMovies('comedy')">Comedy</button>
+      <button onclick="fetchMovies('drama')">Drama</button>
+      <button onclick="fetchMovies('horror')">Horror</button>
+      <button onclick="fetchMovies('romance')">Romance</button>
+      <button onclick="fetchOscarWinningMovies()">Oscar Winning</button>
+      <button onclick="fetchNostalgicMovies()">Nostalgic</button>
+      <button onclick="fetch2024Hits()">2024 Hits</button>
+    </nav>
+  </header>
+  
+  <section id="home-page" class="active">
+    <div class="welcome-section">
+      <h2>Welcome to CineScope</h2>
+      <p>
+        Explore the world of cinema at CineScope! Discover your next favorite movie, browse genres, or search for specific titles. Whether you're into action-packed adventures, romantic tales, spine-chilling horror, or laugh-out-loud comedies, we've got something for everyone!
+      </p>
+    </div>
+    <div class="featured-section">
+      <h3>Featured Movies</h3>
+      <div id="featured-movies-container">
+        <!-- Featured movies will be dynamically loaded here -->
+      </div>
+    </div>
+  </section>
+  
+  <main id="movies-container" class="hidden">
+    <!-- Movies will be dynamically loaded here -->
+  </main>
+  
+  <footer>
+    <p>Powered by TMDB API</p>
+  </footer>
+  
+  <script src="script.js"></script>
+
+
+
+ 
+</body>
+</html>
